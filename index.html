@@ -29,59 +29,60 @@ body{
     radial-gradient(circle at bottom right,#6d28d9 0%,transparent 35%),
     linear-gradient(135deg,#020617,#050816,#09090f);
 
-    overflow-y:auto;
     overflow-x:hidden;
     color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     padding:20px;
 }
 
-/* ===== Floating Blur ===== */
+/* Blur Effects */
 
 .blur1,
 .blur2{
-    position:absolute;
+    position:fixed;
     border-radius:50%;
     filter:blur(120px);
     z-index:0;
 }
 
 .blur1{
-    width:320px;
-    height:320px;
+    width:350px;
+    height:350px;
     background:#2563eb;
-    top:-100px;
-    left:-100px;
+    top:-120px;
+    left:-120px;
     opacity:.35;
 }
 
 .blur2{
-    width:320px;
-    height:320px;
+    width:350px;
+    height:350px;
     background:#7c3aed;
-    bottom:-100px;
-    right:-100px;
+    bottom:-120px;
+    right:-120px;
     opacity:.30;
 }
 
-/* ===== Main Card ===== */
+/* Main Container */
 
 .main-box{
     width:100%;
-    max-width:1180px;
+    max-width:1400px;
+    margin:auto;
+
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.10);
     backdrop-filter:blur(18px);
-    border-radius:35px;
-    padding:45px;
+
+    border-radius:38px;
+    padding:50px;
+
     position:relative;
     z-index:2;
+
     box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
-/* ===== Header ===== */
+/* Header */
 
 .top{
     display:flex;
@@ -89,26 +90,32 @@ body{
     align-items:center;
     flex-wrap:wrap;
     gap:20px;
-    margin-bottom:60px;
+    margin-bottom:70px;
 }
 
 .logo-area{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:20px;
 }
 
 .logo{
-    width:85px;
-    height:85px;
-    border-radius:24px;
+    width:95px;
+    height:95px;
+    border-radius:28px;
+
     background:rgba(255,255,255,.08);
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     overflow:hidden;
+
     border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 10px 30px rgba(37,99,235,.25);
+
+    box-shadow:
+    0 0 30px rgba(37,99,235,.25);
 }
 
 .logo img{
@@ -118,49 +125,73 @@ body{
 }
 
 .brand h1{
-    font-size:38px;
+    font-size:46px;
     font-weight:800;
-    line-height:1.1;
+    line-height:1;
 }
 
 .brand p{
+    margin-top:8px;
     color:#cbd5e1;
-    margin-top:6px;
     font-size:14px;
-    letter-spacing:1px;
+    letter-spacing:2px;
 }
 
-/* ===== Hero ===== */
+.tag{
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#e2e8f0;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* Hero */
 
 .hero{
     display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:40px;
-    align-items:center;
+    grid-template-columns:1fr 420px;
+    gap:60px;
+    align-items:flex-start;
+}
+
+/* Left */
+
+.left{
+    width:100%;
 }
 
 .left h2{
-    font-size:68px;
-    line-height:1.05;
+    font-size:86px;
+    line-height:1.02;
     font-weight:900;
-    margin-bottom:24px;
+    margin-bottom:28px;
 }
 
 .left h2 span{
     background:linear-gradient(90deg,#60a5fa,#c084fc);
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .left p{
-    font-size:18px;
+    max-width:760px;
+
+    font-size:20px;
     line-height:2;
+
     color:#dbe4f0;
-    max-width:700px;
-    margin-bottom:40px;
+
+    margin-bottom:45px;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 
 .buttons{
     display:flex;
@@ -169,21 +200,32 @@ body{
 }
 
 .btn{
-    padding:18px 32px;
-    border-radius:18px;
+    min-width:250px;
+
+    padding:20px 32px;
+
+    border-radius:20px;
+
     text-decoration:none;
+
     font-size:16px;
     font-weight:700;
-    transition:.35s;
+
     display:flex;
     align-items:center;
-    gap:10px;
+    justify-content:center;
+    gap:12px;
+
+    transition:.35s;
 }
 
 .primary{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
+
     color:white;
-    box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.35);
 }
 
 .primary:hover{
@@ -191,62 +233,101 @@ body{
 }
 
 .glass{
-    border:1px solid rgba(255,255,255,.12);
     background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.12);
+
     color:white;
+
     backdrop-filter:blur(10px);
 }
 
 .glass:hover{
-    background:rgba(255,255,255,.12);
     transform:translateY(-5px);
+
+    background:rgba(255,255,255,.12);
 }
 
-/* ===== Right Side ===== */
+/* Right */
 
 .right{
+    width:100%;
     display:flex;
-    justify-content:center;
+    justify-content:flex-end;
 }
 
 .feature-box{
     width:100%;
-    max-width:360px;
+    max-width:420px;
+
     background:rgba(255,255,255,.05);
+
     border:1px solid rgba(255,255,255,.08);
-    border-radius:30px;
+
+    border-radius:34px;
+
     padding:35px;
 }
 
 .feature-box h3{
-    font-size:28px;
-    margin-bottom:25px;
+    font-size:34px;
+    margin-bottom:28px;
 }
 
 .feature{
-    padding:18px;
-    border-radius:18px;
-    margin-bottom:16px;
+    padding:22px;
+
+    border-radius:22px;
+
+    margin-bottom:18px;
+
     background:rgba(255,255,255,.04);
+
     border:1px solid rgba(255,255,255,.06);
 }
+
+.feature strong{
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:17px;
+}
+
+.feature span{
+    color:#d1d5db;
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+/* Feature Colors */
+
 .blue{
     border:1px solid rgba(59,130,246,.25);
-    box-shadow:0 0 25px rgba(59,130,246,.08);
+
+    box-shadow:
+    0 0 25px rgba(59,130,246,.08);
 }
 
 .purple{
     border:1px solid rgba(168,85,247,.25);
-    box-shadow:0 0 25px rgba(168,85,247,.08);
+
+    box-shadow:
+    0 0 25px rgba(168,85,247,.08);
 }
 
 .gold{
     border:1px solid rgba(245,158,11,.25);
-    box-shadow:0 0 25px rgba(245,158,11,.08);
+
+    box-shadow:
+    0 0 25px rgba(245,158,11,.08);
 }
 
 .premium{
-    background:linear-gradient(
+    background:
+    linear-gradient(
     135deg,
     rgba(37,99,235,.15),
     rgba(124,58,237,.18));
@@ -256,28 +337,22 @@ body{
     box-shadow:
     0 0 35px rgba(99,102,241,.15);
 }
-.feature strong{
-    display:block;
-    margin-bottom:6px;
-    font-size:16px;
-}
 
-.feature span{
-    color:#cbd5e1;
-    font-size:14px;
-}
-
-/* ===== Footer ===== */
+/* Footer */
 
 .footer{
-    margin-top:55px;
-    padding-top:25px;
+    margin-top:60px;
+
+    padding-top:28px;
+
     border-top:1px solid rgba(255,255,255,.08);
+
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    gap:15px;
+
+    gap:20px;
 }
 
 .footer p{
@@ -285,62 +360,53 @@ body{
     font-size:14px;
 }
 
-.tag{
-    padding:10px 18px;
-    border-radius:50px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    color:#e2e8f0;
-    font-size:13px;
-}
+/* Responsive */
 
-/* ===== Responsive ===== */
-
-@media(max-width:980px){
-
-    body{
-        overflow:auto;
-        padding:15px;
-    }
+@media(max-width:1100px){
 
     .hero{
         grid-template-columns:1fr;
     }
 
+    .right{
+        justify-content:flex-start;
+    }
+
     .left h2{
-        font-size:48px;
-    }
-
-    .main-box{
-        padding:28px;
-    }
-
-    .brand h1{
-        font-size:28px;
+        font-size:60px;
     }
 
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
+
+    .main-box{
+        padding:30px;
+    }
+
+    .brand h1{
+        font-size:34px;
+    }
 
     .left h2{
-        font-size:38px;
+        font-size:44px;
     }
 
     .left p{
-        font-size:15px;
+        font-size:16px;
         line-height:1.8;
     }
 
     .btn{
         width:100%;
-        justify-content:center;
+        min-width:100%;
     }
 
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="blur1"></div>
@@ -356,20 +422,27 @@ body{
 
             <div class="logo">
 
-<img src="https://drive.google.com/thumbnail?id=1CGvJ175QXCp_wEs77BwBu_AB49dIJ4kO"
-     alt="Mahadev Academy Logo">
+                <img src="https://drive.google.com/thumbnail?id=1CGvJ175QXCp_wEs77BwBu_AB49dIJ4kO"
+                alt="Mahadev Academy Logo">
 
-</div>
+            </div>
 
             <div class="brand">
+
                 <h1>Mahadev Academy</h1>
-                <p>EDUCATION • DISCIPLINE • SUCCESS</p>
+
+                <p>
+                    EDUCATION • DISCIPLINE • SUCCESS
+                </p>
+
             </div>
 
         </div>
 
         <div class="tag">
+
             INDIA'S NEXT GEN LEARNING PLATFORM
+
         </div>
 
     </div>
@@ -388,46 +461,43 @@ body{
             </h2>
 
             <p>
-                Mahadev Academy is a modern education platform for students of
-                Class 6-12, Olympiads, NTSE, AISSEE & Competitive Preparation.
-                Premium learning experience with powerful digital ecosystem.
+                Mahadev Academy is a modern digital education ecosystem
+                for Class 6-12, Olympiads, NTSE, AISSEE &
+                competitive preparation with premium smart learning experience.
             </p>
 
-<div class="buttons">
+            <div class="buttons">
 
-    <a href="https://mahadev-academy.github.io/MAT/"
-       target="_blank"
-       class="btn primary">
+                <a href="https://mahadev-academy.github.io/MAT/"
+                target="_blank"
+                class="btn primary">
 
-        🚀 MAT App
+                    🚀 MAT App
 
-    </a>
+                </a>
 
-    <a href="https://sites.google.com/view/mahadevacademy"
-       target="_blank"
-       class="btn glass">
+                <a href="https://sites.google.com/view/mahadevacademy"
+                target="_blank"
+                class="btn glass">
 
-        🌐 Website
+                    🌐 Website
 
-    </a>
+                </a>
 
-    <a href="https://mahadev-academy.github.io/MA-App/"
-       target="_blank"
-       class="btn glass">
+                <a href="https://mahadev-academy.github.io/MA-App/"
+                target="_blank"
+                class="btn glass">
 
-        🔐 Student / Parents Login
+                    🔐 Student / Parents Login
 
-    </a>
+                </a>
 
-    <a href="https://drive.google.com/file/d/1aPGeD4eiA_c1JEM_5vPaS4Loar9tXghC/view?usp=sharing"
-       target="_blank"
-       class="btn glass">
+                <a href="https://drive.google.com/file/d/1aPGeD4eiA_c1JEM_5vPaS4Loar9tXghC/view?usp=sharing"
+                target="_blank"
+                class="btn glass">
 
-       📄 MA Prospects
+                    📄 MA Prospects
 
-    </a>
-
-</div>
                 </a>
 
             </div>
@@ -438,35 +508,66 @@ body{
 
         <div class="right">
 
-<div class="feature-box">
+            <div class="feature-box">
 
-    <h3>Why Mahadev Academy?</h3>
+                <h3>
+                    Why Mahadev Academy?
+                </h3>
 
-    <div class="feature blue">
-        <strong>📘 Smart Education</strong>
-        <span>Concept-based learning with modern teaching methodology.</span>
-    </div>
+                <div class="feature blue">
 
-    <div class="feature purple">
-        <strong>📊 Advanced Test System</strong>
-        <span>AI-driven MAT App ecosystem with performance analytics.</span>
-    </div>
+                    <strong>
+                        📘 Smart Education
+                    </strong>
 
-    <div class="feature gold">
-        <strong>🏆 Competitive Excellence</strong>
-        <span>Focused preparation for Olympiads, NTSE, AISSEE & more.</span>
-    </div>
+                    <span>
+                        Concept-based learning with modern
+                        teaching methodology.
+                    </span>
 
-    <div class="feature premium">
-        <strong>⚡ Future-Ready Digital Ecosystem</strong>
-        <span>
-            Next-generation technology, smart analytics & premium
-            learning infrastructure for modern achievers.
-        </span>
-    </div>
+                </div>
 
-</div>
+                <div class="feature purple">
 
+                    <strong>
+                        📊 Advanced Test System
+                    </strong>
+
+                    <span>
+                        AI-driven MAT App ecosystem with
+                        smart performance analytics.
+                    </span>
+
+                </div>
+
+                <div class="feature gold">
+
+                    <strong>
+                        🏆 Competitive Excellence
+                    </strong>
+
+                    <span>
+                        Focused preparation for Olympiads,
+                        NTSE, AISSEE & future achievers.
+                    </span>
+
+                </div>
+
+                <div class="feature premium">
+
+                    <strong>
+                        ⚡ Future-Ready Digital Ecosystem
+                    </strong>
+
+                    <span>
+                        Next-generation technology, premium
+                        infrastructure & powerful digital learning
+                        experience for modern champions.
+                    </span>
+
+                </div>
+
+            </div>
 
         </div>
 
