@@ -23,12 +23,14 @@ html{
 
 body{
     min-height:100vh;
-    
-    radial-gradient(circle at top left,#133a9e 0%,transparent 40%),
-    radial-gradient(circle at bottom right,#5b21b6 0%,transparent 35%),
-    #020617;
+
+    background:
+    radial-gradient(circle at top left,#1d4ed8 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#6d28d9 0%,transparent 35%),
+    linear-gradient(135deg,#020617,#050816,#09090f);
+
     overflow-y:auto;
-overflow-x:hidden;
+    overflow-x:hidden;
     color:white;
     display:flex;
     align-items:center;
@@ -49,7 +51,7 @@ overflow-x:hidden;
 .blur1{
     width:320px;
     height:320px;
-    #2563eb;
+    background:#2563eb;
     top:-100px;
     left:-100px;
     opacity:.35;
@@ -58,7 +60,7 @@ overflow-x:hidden;
 .blur2{
     width:320px;
     height:320px;
-    #7c3aed;
+    background:#7c3aed;
     bottom:-100px;
     right:-100px;
     opacity:.30;
@@ -69,7 +71,7 @@ overflow-x:hidden;
 .main-box{
     width:100%;
     max-width:1180px;
-    rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.10);
     backdrop-filter:blur(18px);
     border-radius:35px;
@@ -100,7 +102,7 @@ overflow-x:hidden;
     width:85px;
     height:85px;
     border-radius:24px;
-    rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -244,10 +246,11 @@ overflow-x:hidden;
 }
 
 .premium{
-    linear-gradient(135deg,
+    background:linear-gradient(
+    135deg,
     rgba(37,99,235,.15),
     rgba(124,58,237,.18));
-    
+
     border:1px solid rgba(255,255,255,.12);
 
     box-shadow:
@@ -285,7 +288,7 @@ overflow-x:hidden;
 .tag{
     padding:10px 18px;
     border-radius:50px;
-    rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.08);
     color:#e2e8f0;
     font-size:13px;
@@ -464,17 +467,6 @@ overflow-x:hidden;
 
 </div>
 
-                <div class="feature">
-                    <strong>🏆 Competitive Excellence</strong>
-                    <span>Focused preparation for future achievers.</span>
-                </div>
-
-                <div class="feature">
-                    <strong>⚡ Industry Level UI</strong>
-                    <span>Premium student experience & technology.</span>
-                </div>
-
-            </div>
 
         </div>
 
