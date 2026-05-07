@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Mahadev Academy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===== Background ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#2563eb;
+    filter:blur(180px);
+    top:-150px;
+    left:-100px;
+    opacity:.35;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#7c3aed;
+    filter:blur(180px);
+    bottom:-150px;
+    right:-100px;
+    opacity:.30;
+    z-index:-1;
+}
+
+/* ===== Navbar ===== */
+
+nav{
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:fixed;
+    top:0;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,.25);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:999;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#60a5fa,#c084fc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#60a5fa;
+}
+
+/* ===== Hero Section ===== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 8% 80px;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.hero h1{
+    font-size:70px;
+    line-height:1.1;
+    margin-bottom:25px;
+    font-weight:800;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#60a5fa,#c084fc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.9;
+    color:#cbd5e1;
+    margin-bottom:40px;
+}
+
+.hero-btns{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 34px;
+    border-radius:14px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.primary-btn{
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    color:white;
+    box-shadow:0 10px 35px rgba(37,99,235,.35);
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
+}
+
+.secondary-btn{
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(10px);
+}
+
+.secondary-btn:hover{
+    background:rgba(255,255,255,.10);
+}
+
+/* ===== Stats ===== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:40px 8% 100px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:40px 25px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    transition:.35s;
+}
+
+.stat-box:hover{
+    transform:translateY(-10px);
+    border-color:#2563eb;
+}
+
+.stat-box h2{
+    font-size:42px;
+    margin-bottom:10px;
+    color:#60a5fa;
+}
+
+.stat-box p{
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+/* ===== Courses ===== */
+
+.section-title{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:60px;
+    font-weight:800;
+}
+
+.courses{
+    padding:20px 8% 100px;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.course-card{
+    background:rgba(255,255,255,.05);
+    border-radius:28px;
+    padding:35px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
+}
+
+.course-card:hover{
+    transform:translateY(-10px);
+    border-color:#7c3aed;
+}
+
+.course-card h3{
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.course-card p{
+    color:#cbd5e1;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.course-card a{
+    color:#60a5fa;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ===== CTA ===== */
+
+.cta{
+    margin:40px 8% 100px;
+    padding:70px 40px;
+    border-radius:35px;
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.cta h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* ===== Footer ===== */
+
+footer{
+    text-align:center;
+    padding:35px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#94a3b8;
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:900px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .section-title{
+        font-size:36px;
+    }
+
+    .cta h2{
+        font-size:36px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+
+<nav>
+    <div class="logo">MAHADEV ACADEMY</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ===== Hero ===== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Build Your <span>Bright Future</span><br>
+            With Mahadev Academy
+        </h1>
+
+        <p>
+            Ideal For Class 6-12, Olympiads, NTSE, JNVST, AISSEE & Competitive Preparation.
+            Modern Education, Smart Learning, Top Results & Real Success.
+        </p>
+
+        <div class="hero-btns">
+            <a href="#" class="btn primary-btn">Start Learning</a>
+            <a href="#" class="btn secondary-btn">Explore Courses</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== Stats ===== -->
+
+<section class="stats">
+
+    <div class="stat-box">
+        <h2>5000+</h2>
+        <p>Students Guided</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>100%</h2>
+        <p>Concept Clarity</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>50+</h2>
+        <p>Top Rankers</p>
+    </div>
+
+    <div class="stat-box">
+        <h2>24×7</h2>
+        <p>Learning Support</p>
+    </div>
+
+</section>
+
+<!-- ===== Courses ===== -->
+
+<section class="courses">
+
+    <h2 class="section-title">Our Programs</h2>
+
+    <div class="course-grid">
+
+        <div class="course-card">
+            <h3>Foundation Batch</h3>
+
+            <p>
+                Strong concept building for students of class 6 to 10 with advanced preparation.
+            </p>
+
+            <a href="#">Learn More →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>Board Preparation</h3>
+
+            <p>
+                Complete board preparation with notes, tests, PYQs and smart revision strategy.
+            </p>
+
+            <a href="#">Learn More →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>Olympiad & NTSE</h3>
+
+            <p>
+                Special preparation for Olympiads, NTSE, Scholarship Exams & Entrance Tests.
+            </p>
+
+            <a href="#">Learn More →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== CTA ===== -->
+
+<section class="cta">
+
+    <h2>Join Mahadev Academy Today</h2>
+
+    <p>
+        Learn with dedication, discipline and smart strategy.
+        Your success journey starts here.
+    </p>
+
+    <a href="#" class="btn secondary-btn">
+        Contact Now
+    </a>
+
+</section>
+
+<!-- ===== Footer ===== -->
+
+<footer>
+
+    © 2026 Mahadev Academy • All Rights Reserved
+
+</footer>
+
+</body>
+</html>
